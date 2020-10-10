@@ -3,4 +3,10 @@
 {% block content %}
 {{block.super}}
 <h1>gallery</h1>
+{% for item in pictures %}
+
+<img src="{{item.image_link.url}}" alt="" class="gallery-image">
+{{item.category}} 
+
+{% endfor %}
 {% endblock %}

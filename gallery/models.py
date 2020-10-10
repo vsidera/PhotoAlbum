@@ -11,6 +11,14 @@ class Images(models.Model):
     def __str__(self):
         return self.title
 
+    @classmethod
+    def get_all(cls):
+        '''
+        method to retrieve all images
+        '''
+        pics = Images.objects.all()
+        return pics    
+
 class Categories(models.Model):
     name = models.CharField(max_length=30)
 
