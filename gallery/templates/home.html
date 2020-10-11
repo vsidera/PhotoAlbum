@@ -2,18 +2,9 @@
 
 {% block content %}
 {{block.super}}
-<form action="/action_page.php">
-    <label for="cars">Choose a car:</label>
-    <select name="cars" id="cars">
-      <option value="volvo">Nairobi</option>
-      <option value="saab">abidjan</option>
-      <option value="opel">tehran</option>
-      <option value="audi">cali</option>
-    </select>
-    <br><br>
-    <input type="submit" value="Submit">
-</form>
-  
+{% for item in locations %} 
+   <a class="dropdown-item" href="/location/{{item.town}}">{{item.town}}</a>
+{% endfor %}
 <h1>gallery</h1>
 {% for item in pictures %}
 
