@@ -8,12 +8,12 @@ def home(request):
     return render(request, 'home.html', {'pictures': pictures, 'locations':locations})
 
 def search(request):
-    if 'category' in request.GET and request.GET['category']:
-        search_term = request.GET.get('category')
+    if 'category' in request.GET and request.GET["category"]:
+        search_term = request.GET.get("category")
         res = Images.search_image(search_term)
-        message = f'{search_term}'
+        message = f"{search_term}"
 
-        return render(request, 'search.html', {'message':message, 'results':res})
+        return render(request, 'search.html', {"message":message, "results":res})
     else:
         message = 'You have not searched any term'
         return render(request, 'search.html', {'message':message})
