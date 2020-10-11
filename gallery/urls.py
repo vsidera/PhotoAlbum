@@ -8,6 +8,9 @@ urlpatterns = [
     path('', views.home, name='gallery-home'),
     url('^search/', views.search, name='search'),
     url('^location/(?P<locale>\w+)/', views.location, name='location'),
+    url(r'^image/(\d+)',views.image,name ='image'),
+    path('index/', views.index, name='gallery-index'),
+
 ]
 
 if settings.DEBUG:

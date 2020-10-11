@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+ {% block content %}
+
+ <div class="container">
+
+   <div class="row">
+    <img src="{{image.image_link.url}}" class="gallery-image" alt="">
+   </div>
+
+   <div class="row">
+    <h1>{{image.location}}</h1>
+   
+   </div>
+
+   <div class="row">
+     <p> {{image.category}}</p>
+   </div>
+
+ </div>
+
+ {% endblock %}

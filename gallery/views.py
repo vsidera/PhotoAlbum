@@ -2,6 +2,9 @@ from django.shortcuts import render
 from .models import Images, Locations
 
 # Create your views here.
+def index(request):
+    return render(request, 'index.html')
+
 def home(request):
     pictures = Images.get_all()
     locations = Locations.get_all()
@@ -21,3 +24,10 @@ def search(request):
 def location(request,locale):
     images = Images.filter_by_location(locale)
     return render(request, 'location.html', {'results':images})
+    
+def image(request,image_id):
+    try:
+        image = Images.objects.get(id = image_id)
+    except DoesNotExist:
+        raise Http404()
+    return render(request,"image.html", {"image":image})    
