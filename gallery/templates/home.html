@@ -8,11 +8,11 @@
 {% endfor %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-4">
+		<div class="col-md-4">
 
             {% for item in pictures %}
             <div class="gallery-item" data-toggle="modal" data-target="#{{item.id}}">
-            <img src="{{item.image_link.url}}" alt="" class="gallery-image">
+            <img src="{{item.image_link.url}}" alt="" height="500" width="100%" class="gallery-image">
             {{item.category}} 
             </div>
          
