@@ -3,9 +3,11 @@
 {% block content %}
 {{block.super}}
 <div class="gallery">
+    <div class="navlocation">
 {% for item in locations %} 
-   <a class="dropdown-item" href="/location/{{item.town}}">{{item.town}}</a>
+   <a href="/location/{{item.town}}"> <b>{{item.town}}</b> |</a>
 {% endfor %}
+    </div>
 <div class="container-fluid">
 	<div class="row">
         <div class="col-md-1"></div>
