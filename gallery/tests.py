@@ -57,7 +57,7 @@ class TestImages(TestCase):
         photos = Images.get_all()    
 
 
-class CategoryTest(TestCase):
+class TestCategory(TestCase):
     '''
     test class for Categories model
     '''
@@ -65,7 +65,7 @@ class CategoryTest(TestCase):
         '''
         test method to create Category instances called before all tests
         '''
-        self.new_category = Categories(name='categoryA')
+        self.new_category = Categories(name='Nature')
         self.new_category.save_category()
 
     def tearDown(self):
@@ -76,29 +76,19 @@ class CategoryTest(TestCase):
 
     def test_save_category(self):
         '''
-        test method to ensure a Category instance has been correctly saved
+        test method to ensure a Category instance is saved
         '''
         self.assertTrue(len(Categories.objects.all()) == 1)     
 
     def test_delete_category(self):
         '''
-        test method to ensure a Category instance has been correctly deleted
+        test method to ensure a Category instance is deleted
         '''
         self.new_category.save_category()
         self.new_category.delete_category()
         self.assertTrue(len(Categories.objects.all()) == 0)    
 
-    def test_update_category(self):
-        '''
-        test method to ensure a Category instance has been correctly updated
-        '''
-        update_cat = Categories.update_category('categoryA', 'differentCat')
-        self.assertEqual(update_cat.name, 'differentCat')
-
-
-
-
-class LocationTest(TestCase):
+class TestLocation(TestCase):
     '''
     test class for Locations model
     '''
@@ -106,7 +96,7 @@ class LocationTest(TestCase):
         '''
         test method to create Location instances called before all tests
         '''
-        self.new_location = Locations(city='lost city', country='unknown')
+        self.new_location = Locations(city='tehran', country='Iran')
         self.new_location.save_location()
 
     def test_save_location(self):
@@ -117,22 +107,8 @@ class LocationTest(TestCase):
 
     def test_delete_location(self):
         '''
-        test method to ensure a Location instance has been correctly deleted
+        test method to ensure a Location instance is deleted
         '''
         self.new_location.save_location()
         self.new_location.delete_location()
         self.assertTrue(len(Locations.objects.all()) == 0)
-
-    def test_update_location(self):
-        '''
-        test method to ensure a Location instance has been correctly updated
-        '''
-        update_locale = Locations.update_location('unknown', 'paperTown')
-        self.assertEqual(update_locale.city, 'paperTown')
-
-    def test_get_all(self):
-        '''
-        test method to ensure all instances of Locations class have been retrieved
-        '''
-        locations = Locations.get_all()
-        print(locations)      
