@@ -8,20 +8,14 @@
 {% endfor %}
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-4">
+		<div class="col-sm-4">
 
             {% for item in pictures %}
             <div class="gallery-item" data-toggle="modal" data-target="#{{item.id}}">
             <img src="{{item.image_link.url}}" alt="" class="gallery-image">
             {{item.category}} 
             </div>
-        </div>
-        <div class="col-md-4">
-		</div>
-		<div class="col-md-4">
-		</div>
-    </div>
-</div>    
+         
 
 <div class="modal fade " id="{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
@@ -43,7 +37,10 @@
 
 
 {% endfor %}
-      
+        </div>
+        
+    </div>
+</div>   
 
 </div>
 {% endblock %}
