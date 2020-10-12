@@ -11,13 +11,18 @@
     <div class="row">
 
       {% if results %}
+      <div class="row">
+        <div class="col-md-1"></div>
+		      <div class="col-md-10">
         {% for item in results %}
           
-              <img src="{{item.image_link.url}}" class="gallery-image" alt="">
-              <h1>{{item.location}}</h1>
-              {{item.category}}
-          
+              <img src="{{item.image_link.url}}" class="gallery-image" height="400px" width="300px" alt="">
+              
         {% endfor %}
+      </div>
+      <div class="col-md-1"></div>
+      
+  </div>
       {% endif %}
       </div>
 </div>
