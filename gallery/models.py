@@ -11,6 +11,12 @@ class Images(models.Model):
     def __str__(self):
         return self.title
 
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()    
+
     @classmethod
     def get_all(cls):
         pics = Images.objects.all()
@@ -18,17 +24,11 @@ class Images(models.Model):
 
     @classmethod
     def search_image(cls, cat):
-        '''
-        method to search images by category
-        '''
         retrieved = cls.objects.filter(category__name__contains=cat) #images assoc w/ this cat
         return retrieved #list of instances
     
     @classmethod
     def filter_by_location(cls ,location):
-        '''
-        method to retrive images by their locations
-        '''
         retrieved = Images.objects.filter(location__town__contains=location)
         return retrieved
 
@@ -36,7 +36,14 @@ class Categories(models.Model):
     name = models.CharField(max_length=30)
 
     def __str__(self):
-        return self.name     
+        return self.name  
+
+    def save_category(self):
+        self.save()
+
+    def delete_category(self):
+        self.delete()       
+
 
 class Locations(models.Model):
     town = models.CharField(max_length=30)
@@ -45,10 +52,13 @@ class Locations(models.Model):
     def __str__(self):
         return self.town
 
+    def save_location(self):
+        self.save()
+
+    def delete_location(self):
+        self.delete()    
+
     @classmethod
     def get_all(cls):
-        '''
-        method to retrive all stored locations
-        '''
         cities = Locations.objects.all()
         return cities    

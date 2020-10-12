@@ -6,38 +6,45 @@
 {% for item in locations %} 
    <a class="dropdown-item" href="/location/{{item.town}}">{{item.town}}</a>
 {% endfor %}
-<h1>gallery</h1>
-{% for item in pictures %}
-<div class="gallery-item" data-toggle="modal" data-target="#{{item.id}}">
-   <img src="{{item.image_link.url}}" alt="" class="gallery-image">
-   {{item.category}} 
-</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+
+            {% for item in pictures %}
+            <div class="gallery-item" data-toggle="modal" data-target="#{{item.id}}">
+            <img src="{{item.image_link.url}}" alt="" class="gallery-image">
+            {{item.category}} 
+            </div>
+        </div>
+        <div class="col-md-4">
+		</div>
+		<div class="col-md-4">
+		</div>
+    </div>
+</div>    
 
 <div class="modal fade " id="{{item.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
        <div class="modal-content popup">
-           <div class="modal-header">
-               <button type="button" data-dismiss="modal">Close
-           </div>
            <div class="modal-body text-center">
-               <h4 class="modal-title" id="imageheader">{{item.title}}</h4>
+               
                <img src="{{item.image_link.url}}" alt="{{item.name}}" class="img-responsive" width="300" height="300">
+               <h4 class="modal-title" id="imageheader">{{item.title}}</h4>
                <p class="text-center">{{item.description}}</p>
                <ul class="list-inline list-unstyled">
                    <li class="list-inline-item gallery-item-likes"><span class="visually-hidden"></span><i class="fa fa-tags" aria-hidden="true"></i> {{item.category}} </li>
                    <li class="list-inline-item gallery-item-comments"><span class="visually-hidden"></span><i class="fa fa-thumb-tack" aria-hidden="true"></i> {{item.location}} </li>
                </ul>
            </div>
-           <div class="modal-footer">
-               <input type="text" value="https://la-galerie.herokuapp.com{{item.image_link.url}}" id="myInput">
-               <button onclick="myFunction()" onmouseout="outFunc()" data-toggle="tooltip" title="copied!">Copy text</button>
-           </div>
+           
        </div>
    </div>
 </div>
 
 
 {% endfor %}
+      
+
 </div>
 {% endblock %}
 {% block scripts %} {{block.super}}

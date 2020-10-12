@@ -15,3 +15,15 @@
   #intro{
     padding-top: 120px;  
   }
+
+  body {
+    font-family: 'Special Elite', cursive;
+    min-height: 100vh;
+    background-color: black;
+    color: white;
+    padding-bottom: 3rem;
+}
+
+img {
+    display: block;
+}
