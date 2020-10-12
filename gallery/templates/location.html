@@ -10,9 +10,13 @@
 
     <div class="row">
         <div class="gallery">
-            {% if results %} {% for item in results %}
+            {% if results %}
+            <div class="row">
+                <div class="col-md-1"></div>
+                      <div class="col-md-10">
+                         {% for item in results %}
             <div class="gallery-item" tabindex="0">
-                <img src="{{item.image_link.url}}" class="gallery-image" alt="">
+                <img src="{{item.image_link.url}}" class="gallery-image" height="400px" width="300px" alt="">
                 <div class="gallery-item-info">
                     <ul>
                         <li class="gallery-item-likes"><span class="visually-hidden"></span><i class="fa fa-tags fa-2x" aria-hidden="true"></i> {{item.category}} </li>
@@ -20,7 +24,12 @@
                     </ul>
                 </div>
             </div>
-            {% endfor %} {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-md-1"></div>
+        
+    </div>
+     {% endif %}
         </div>
     </div>
 </div>

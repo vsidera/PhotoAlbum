@@ -19,7 +19,8 @@
   body {
     font-family: 'Special Elite', cursive;
     min-height: 100vh;
-    background-color: black;
+    /* background-color: black; */
+    background: url(/images/back1.webp);
     color: white;
     padding-bottom: 3rem;
 }
