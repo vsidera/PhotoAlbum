@@ -26,11 +26,11 @@
            <div class="modal-body text-center">
                
                <img src="{{item.image_link.url}}" alt="{{item.name}}" class="img-responsive" width="300" height="300">
-               <h4 class="modal-title" id="imageheader">{{item.title}}</h4>
-               <p class="text-center">{{item.description}}</p>
+               <h4 class="modal-title" id="imageheader" ><b>{{item.title}}</b></h4>
+               <p class="text-center" style="color: indigo;"><i>{{item.description}}</i></p>
                <ul class="list-inline list-unstyled">
-                   <li class="list-inline-item gallery-item-likes"><span class="visually-hidden"></span><i class="fa fa-tags" aria-hidden="true"></i> {{item.category}} </li>
-                   <li class="list-inline-item gallery-item-comments"><span class="visually-hidden"></span><i class="fa fa-thumb-tack" aria-hidden="true"></i> {{item.location}} </li>
+                   <li class="list-inline-item gallery-item-likes" style="color: indigo;"><span class="visually-hidden"></span><i class="fa fa-tags" aria-hidden="true"></i> category:{{item.category}} </li>
+                   <li class="list-inline-item gallery-item-comments" style="color: indigo;"><span class="visually-hidden"></span><i class="fa fa-thumb-tack" aria-hidden="true"></i> location:{{item.location}} </li>
                </ul>
            </div>
            

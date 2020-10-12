@@ -19,7 +19,6 @@
   body {
     font-family: 'Special Elite', cursive;
     min-height: 100vh;
-    
     color: black;
     padding-bottom: 3rem;
  }
@@ -35,8 +34,7 @@
 }
 
 .navigation{
-  background-color: white;
-  
+  background-color: black;
 }
 
 a{
@@ -49,4 +47,8 @@ a{
   align-content: center;
   padding-left: 500px;
   padding-bottom: 10px;
+}
+
+.navbar navbar-inverse{
+  background-color: black;
 }
