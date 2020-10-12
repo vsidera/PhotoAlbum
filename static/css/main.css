@@ -24,10 +24,12 @@
     padding-bottom: 3rem;
 }
 
-img {
-    display: block;
+.col-md-10{
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.col-md-4{
-  display: flex;
+.gallery-item{
+  flex-direction: row;
+  width: 30%;
 }
