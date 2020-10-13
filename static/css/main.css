@@ -52,3 +52,8 @@ a{
 .navbar navbar-inverse{
   background-color: black;
 }
+
+.bg-steel {
+  background-color: white;
+  opacity: 100%;
+}
