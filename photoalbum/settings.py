@@ -25,7 +25,7 @@ SECRET_KEY = 'l4l36m*3wx+r4ctvo8i_@mqhj^v)1uj8m%(+7w5zson1-!z)^7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://vsphotoalbum.herokuapp.com/','127.0.0.1']
 
 
 # Application definition
