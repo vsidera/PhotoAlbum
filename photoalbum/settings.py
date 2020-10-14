@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_database_url
+import cloudinary
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gallery',
     'bootstrap3',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,15 @@ STATICFILES_DIRS = [
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# cloudinary.config(
+#   cloud_name = os.environ.get('CLOUDINARY_CLOUD_NAME'),  
+#   api_key = os.environ.get('CLOUDINARY_API_KEY'),  
+#   api_secret = os.environ.get('CLOUDINARY_API_SECRET')  
+# )
+
+cloudinary.config(
+  cloud_name = 'siderra',  
+  api_key = '575213331593564',  
+  api_secret = 'n0Xt_UrUvM6EmbmzRM04PpCR5Rs', 
+)
